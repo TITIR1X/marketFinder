@@ -8,7 +8,7 @@ menu {
     padding: 0;
     position: fixed;
     animation: slideIn 0.2s forwards;
-    box-shadow: 2px 2px 13px rgb(0,0,0,.13);
+    box-shadow: 2px 2px 13px rgb(0, 0, 0, .13);
     background-color: #fff;
 }
 
@@ -78,4 +78,15 @@ main .title {
     font-size: 16px;
     text-align: left;
     font-weight: 400;
+}
+
+
+@media (min-width: 610px) {
+    menu {
+        width: 610px;
+    }
+
+    ::ng-deep .receive-sidebar-action {
+        animation: none !important;
+    }
 }
