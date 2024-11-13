@@ -1,0 +1,36 @@
+<div *ngIf="searchInputService.getStoredData() as storedData" class="data-container">
+  <!-- Categorías -->
+  <section class="categories">
+    <h3>Categorías:</h3>
+    <table class="category-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of storedData.categories">
+          <td *ngFor="let item of category.categorie">{{ item.name }}</td>
+          <td *ngFor="let item of category.categorie">{{ item.score }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Categorías desde la raíz -->
+  <section class="categories-root">
+    <h3>Categorías padre:</h3>
+    <div *ngFor="let categoryRoot of storedData.categories_from_root" class="category-root">
+      <div *ngFor="let path of categoryRoot.path_from_root" class="path-item">
+        <span class="path-name">{{ path.name }}</span>
+        <span class="path-score">Score: {{ path.score }}</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Mensaje cuando no hay datos -->
+<div *ngIf="!searchInputService.getStoredData()" class="no-data">
+  <p>No hay datos disponibles. Realiza una búsqueda para ver los resultados.</p>
+</div>

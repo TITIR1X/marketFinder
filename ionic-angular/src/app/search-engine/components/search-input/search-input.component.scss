@@ -1,0 +1,59 @@
+main {
+    padding: 0 13px;
+    justify-content: right;
+}
+
+main h1 {
+    margin: 55px 0;
+    font-size: 34px;
+    text-align: center;
+    font-weight: 500;
+    user-select: none;
+}
+
+.textarea__container {
+    border: 1px solid rgb(0, 0, 0, .21);
+    height: 89px;
+    position: relative;
+    border-radius: 13px;
+    padding-bottom: 34px;
+}
+
+.textarea__container label {
+    cursor: text;
+    height: 89px;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: 1px solid transparent;
+    padding: 13px;
+    font-size: 16px;
+    border-radius: 13px;
+}
+
+button.send-request {
+    --square-px: calc(34px);
+    right: 3px;
+    width: var(--square-px);
+    height: var(--square-px);
+    display: flex;
+    position: absolute;
+    min-width: var(--square-px);
+    transform: translateY(calc(-34px - 5px));
+    min-height: var(--square-px);
+    align-items: center;
+    border-radius: 13px;
+    justify-content: center;
+    background-color: #000;
+}
+
+button.send-request svg {
+    --square-px: 21px;
+    fill: #fff;
+    width: var(--square-px);
+    height: var(--square-px);
+}

@@ -1,0 +1,81 @@
+menu {
+    left: -89%;
+    top: 0;
+    width: 89%;
+    margin: 0;
+    height: 100%;
+    z-index: 31;
+    padding: 0;
+    position: fixed;
+    animation: slideIn 0.2s forwards;
+    box-shadow: 2px 2px 13px rgb(0,0,0,.13);
+    background-color: #fff;
+}
+
+@keyframes slideIn {
+    from {
+        left: -89%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(89% - 55px));
+    }
+}
+
+::ng-deep .receive-sidebar-action {
+    animation: slideOut 0.2s forwards;
+}
+
+menu header {
+    display: flex;
+    padding: 13px 13px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+menu header h1 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+menu header button {
+    background-color: transparent;
+}
+
+menu header button svg {
+    --square-px: 34px;
+    width: var(--square-px);
+    height: var(--square-px);
+}
+
+main .date {
+    color: rgb(0, 0, 0, .8);
+    margin: 13px 0 13px 13px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+main button {
+    width: 100%;
+    padding: 13px 0 13px 13px;
+    background-color: transparent;
+}
+
+main .title {
+    color: rgb(0, 0, 0, 1);
+    margin: 0;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 400;
+}

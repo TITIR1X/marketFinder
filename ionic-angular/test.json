@@ -1,0 +1,153 @@
+{
+    "categories_from_root": [
+        {
+            "path_from_root": [
+                {
+                    "id": "MLA5725",
+                    "name": "Accesorios para Veh\u00edculos",
+                    "score": 55
+                },
+                {
+                    "id": "MLA1747",
+                    "name": "Repuestos Autos y Camionetas",
+                    "score": 55
+                },
+                {
+                    "id": "MLA373359",
+                    "name": "Carrocer\u00eda",
+                    "score": 55
+                },
+                {
+                    "id": "MLA447346",
+                    "name": "Molduras",
+                    "score": 55
+                },
+                {
+                    "id": "MLA447348",
+                    "name": "Molduras para Ventanas",
+                    "score": 55
+                }
+            ],
+            "score": 55
+        },
+        {
+            "path_from_root": [
+                {
+                    "id": "MLA5725",
+                    "name": "Accesorios para Veh\u00edculos",
+                    "score": 55
+                },
+                {
+                    "id": "MLA1747",
+                    "name": "Repuestos Autos y Camionetas",
+                    "score": 55
+                },
+                {
+                    "id": "MLA373144",
+                    "name": "Repuestos de Habit\u00e1culo",
+                    "score": 55
+                },
+                {
+                    "id": "MLA373146",
+                    "name": "Bandejas Luneta",
+                    "score": 55
+                }
+            ],
+            "score": 55
+        },
+        {
+            "path_from_root": [
+                {
+                    "id": "MLA5725",
+                    "name": "Accesorios para Veh\u00edculos",
+                    "score": 55
+                },
+                {
+                    "id": "MLA456046",
+                    "name": "Repuestos N\u00e1uticos",
+                    "score": 55
+                },
+                {
+                    "id": "MLA22206",
+                    "name": "Motores y Repuestos",
+                    "score": 55
+                },
+                {
+                    "id": "MLA455976",
+                    "name": "Sistema de Combustible",
+                    "score": 55
+                },
+                {
+                    "id": "MLA430455",
+                    "name": "Mangueras para Combustible",
+                    "score": 55
+                }
+            ],
+            "score": 55
+        }
+    ],
+    "categories": [
+        {
+            "categorie": [
+                {
+                    "id": 1273,
+                    "name": "Manijas para Puertas",
+                    "path_from_root": [
+                        {
+                            "id": "MLA5725",
+                            "name": "Accesorios para Veh\u00edculos"
+                        },
+                        {
+                            "id": "MLA1747",
+                            "name": "Repuestos Autos y Camionetas"
+                        },
+                        {
+                            "id": "MLA373359",
+                            "name": "Carrocer\u00eda"
+                        },
+                        {
+                            "id": "MLA430257",
+                            "name": "Manijas"
+                        },
+                        {
+                            "id": "MLA375040",
+                            "name": "Manijas para Puertas"
+                        }
+                    ],
+                    "parent": null,
+                    "score": 95
+                }
+            ]
+        },
+        {
+            "categorie": [
+                {
+                    "id": 3075,
+                    "name": "Manijas de Puertas",
+                    "path_from_root": [
+                        {
+                            "id": "MLA5725",
+                            "name": "Accesorios para Veh\u00edculos"
+                        },
+                        {
+                            "id": "MLA419936",
+                            "name": "Repuestos de L\u00ednea Pesada"
+                        },
+                        {
+                            "id": "MLA456592",
+                            "name": "Repuestos de Cabina"
+                        },
+                        {
+                            "id": "MLA456637",
+                            "name": "Puertas"
+                        },
+                        {
+                            "id": "MLA437829",
+                            "name": "Manijas de Puertas"
+                        }
+                    ],
+                    "parent": null,
+                    "score": 78
+                }
+            ]
+        },
