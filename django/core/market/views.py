@@ -1,18 +1,13 @@
 import json
-from fuzzywuzzy import fuzz
 from .models import Category
+from django.db.models import Q
 from django.views import View
 from django.http import JsonResponse
-from .utils import (
-                    build_response,
-                    match_category,
-                    fetch_categories,
-                    get_search_query,
-                    group_results_by_path,
-                    create_category_result)
+from market.utils import fetch_categories, get_search_query, match_category, create_category_result, group_results_by_path, build_response
 
 
 def category_search(request):
+    """Vista que maneja la búsqueda de categorías según la consulta dada."""
     query = get_search_query(request)
     
     if not query:
@@ -21,15 +16,12 @@ def category_search(request):
     categories = fetch_categories()
     results = []
 
-    # Busca coincidencias utilizando fuzzywuzzy
+    # Busca coincidencias utilizando una comparación simple
     for category in categories:
         score = match_category(query, category)
-        if score >= 55:
+        if score >= 55:  # Solo agregar categorías con una puntuación suficientemente alta
             results.append(create_category_result(category, score))
     
-    # Ordena los resultados por la puntuación de la coincidencia
-    results = sorted(results, key=lambda x: x['score'], reverse=True)
-
     # Agrupa los resultados por el 'path_from_root'
     grouped_results = group_results_by_path(results)
 
