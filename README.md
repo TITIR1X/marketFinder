@@ -11,8 +11,8 @@
 
 2. Una vez instalado **NVM**, abre la terminal (cmd) y ejecuta:
    ```bash
-   nvm install 23.2   # Instala la última versión de Node.js (Verificar versión actual en https://nodejs.org/en)
-   nvm use 23.2
+   nvm install 22.11   # Instala la versión actual de Node.js con soporte a largo plazo (Verificar versión actual en https://nodejs.org/en)
+   nvm use 22.11
    ```
 
 ### 2. Instalación de Angular CLI e Ionic CLI
