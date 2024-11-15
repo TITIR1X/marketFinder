@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../../services/menu.service';
+import { DynamicHostService } from '../../services/dynamic-host.service';
 
 @Component({
   selector: 'shared-options',
@@ -8,6 +9,9 @@ import { MenuService } from '../../services/menu.service';
 })
 export class OptionsComponent {
 
-  constructor(public menuService: MenuService) { }
+  constructor(
+    public menuService: MenuService,
+    public dynamicHostService: DynamicHostService,
+  ) { }
 
 }

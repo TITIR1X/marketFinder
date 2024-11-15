@@ -1,0 +1,119 @@
+.bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    position: fixed;
+    backdrop-filter: blur(3px);
+    background-color: rgb(0, 0, 0, .55);
+}
+
+main {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    z-index: 8;
+    display: flex;
+    position: fixed;
+    max-width: 310px;
+    transform: translate(-50%, -50%);
+    min-height: 144px;
+    border-radius: 13px;
+    justify-content: center;
+    backdrop-filter: blur(55px);
+    background-color: light-dark(rgb(255, 255, 255, .8), rgb(0, 0, 0, .8));
+}
+
+main .content {
+    width: 100%;
+    padding: 0 34px;
+}
+
+main header {
+    width: 100%;
+    display: flex;
+    padding: 21px 0;
+    align-items: center;
+    justify-content: right;
+}
+
+main header svg {
+    --square-px: 21px;
+    width: var(--square-px);
+    height: var(--square-px);
+    cursor: pointer;
+}
+
+main label {
+    // width: 100%;
+    // margin: auto;
+    // display: block;
+    // max-width: 377px;
+}
+
+main h1 {
+    color: light-dark(#000, #fff);
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    user-select: none;
+}
+
+
+
+main .content input {
+    width: 100%;
+    color: light-dark(#000, #fff);
+    margin: 0 auto;
+    padding: 3px 8px;
+}
+
+main .content input.green {
+    border: 1px solid green;
+}
+
+
+
+.status-container {
+    gap: 0 5px;
+    width: 144px;
+    cursor: default;
+    height: 34px;
+    margin: 13px 0 21px 0;
+    border: 1px solid light-dark(rgb(0, 0, 0, .01), rgb(255, 255, 255, .01));
+    padding: 0 5px;
+    display: flex;
+    user-select: none;
+    align-items: center;
+    border-radius: 8px;
+    background-color: light-dark(rgb(0, 0, 0, .03), rgb(255, 255, 255, .03));
+}
+
+.status-container span {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.status-container svg {
+    --square-px: 21px;
+    width: var(--square-px) !important;
+    height: var(--square-px) !important;
+    padding: 3px;
+}
+
+
+svg.connecting {
+    fill: white;
+}
+
+span.operational {
+    color: green;
+}
+svg.operational {
+    fill: green;
+}
+
+svg.error {
+    fill: red;
+}

@@ -1,18 +1,20 @@
 <div class="bg" (click)="this.menuService.handleDisplayOptions();"></div>
 <div class="container">
-
     <menu>
-        <button>
-            <span>Mi cuenta</span>
-  </button>
-  <button>
-      <span>Membresía</span>
-    </button>
-    <button>
-        <span>Mis datos</span>
-    </button>
-    <button>
-      <span>Acerca de</span>
-    </button>
+        <button (click)="this.menuService.handleDisplayOptions();">
+            <span><s>Mi cuenta</s></span>
+        </button>
+        <button (click)="this.menuService.handleDisplayOptions();">
+            <span><s>Membresía</s></span>
+        </button>
+        <button (click)="this.menuService.handleDisplayOptions();">
+            <span><s>Mis datos</s></span>
+        </button>
+        <button (click)="this.menuService.handleDisplayOptions();">
+            <span><s>Acerca de</s></span>
+        </button>
+        <button (click)="dynamicHostService.showContainerComponent();this.menuService.handleDisplayOptions();">
+            <span>Ingresar API</span>
+        </button>
     </menu>
 </div>

@@ -4,6 +4,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { IonicModule } from '@ionic/angular';
 import { OptionsComponent } from './components/options/options.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DynamicHostComponent } from './components/dynamic-host/dynamic-host.component';
 
 
 
@@ -12,13 +13,15 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     MenuComponent,
     OptionsComponent,
     SidebarComponent,
+    DynamicHostComponent
   ],
   imports: [
     CommonModule,
     IonicModule
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    DynamicHostComponent
   ]
 })
 export class SharedModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DynamicHostService } from '../../../shared/services/dynamic-host.service';
 
 @Component({
   selector: 'app-playground',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playground-page.component.scss'],
 })
 export class PlaygroundPageComponent {
-
-
+  constructor(
+    public dynamicHostService: DynamicHostService,
+  ) { }
 }
