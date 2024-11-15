@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, switchMap } from 'rxjs';
 import { SearchInputService } from '../../services/search-input.service';
+import { DynamicSearchEngineService } from '../../services/dynamic-search-engine.service';
+import { SearchEngineModel } from '../../interfaces/dynamic-search-engine.interface';
 
 @Component({
   selector: 'search-engine-search-input',
@@ -12,7 +14,10 @@ export class SearchInputComponent {
 
   searchControl: FormControl = new FormControl();
 
-  constructor(private searchInputService: SearchInputService) {}
+  constructor(
+    private searchInputService: SearchInputService,
+    public dynamicSearchEngineService: DynamicSearchEngineService
+  ) {  }
 
   ngOnInit() {
     this.searchControl.valueChanges.pipe(

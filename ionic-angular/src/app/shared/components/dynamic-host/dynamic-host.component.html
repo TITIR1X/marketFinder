@@ -1,4 +1,4 @@
-<div class="bg"></div>
+<div class="bg" (click)="dynamicHostService.hideContainerComponent();"></div>
 <main>
   <div class="content">
     <header>
@@ -6,7 +6,7 @@
     </header>
     <label for="input">
       <h1>Ingresa el host del servidor backend</h1>
-      <input [value]="dynamicHostService.getHost() || ''" id="input" type="text" (input)="onInputChange($event)" placeholder="https://example.ngrok-free.app" />
+      <input [value]="hostInLocalStorage" id="input" type="text" (input)="onInputChange($event)" placeholder="https://example.ngrok-free.app" />
     </label>
     
     <div id="statusContainer" class="status-container" *ngIf="currentStatus">

@@ -7,16 +7,19 @@ import { DynamicHostService } from '../../services/dynamic-host.service';
   styleUrls: ['./dynamic-host.component.scss'],
 })
 export class DynamicHostComponent implements OnInit {
-  
+
+  hostInLocalStorage = localStorage.getItem('apiHost') || '';
   currentStatus: 'waiting' | 'connecting' | 'operational' | 'error' | undefined = 'waiting';
-  
+
   constructor(
     public dynamicHostService: DynamicHostService,
   ) { }
 
   ngOnInit() {
     this.currentStatus = 'waiting';
-    this.check(this.dynamicHostService.getHost()||'')
+    if (this.hostInLocalStorage) {
+      this.check(this.hostInLocalStorage);
+    }
   }
 
   onInputChange(event: Event) {
@@ -29,12 +32,13 @@ export class DynamicHostComponent implements OnInit {
 
   check(inputValue: string) {
     // Pass the input value to checkDynamicHost
-    this.dynamicHostService.checkDynamicHost(inputValue).subscribe((result) => {  
+    this.dynamicHostService.checkDynamicHost(inputValue).subscribe((result) => {
       this.currentStatus = result as 'connecting' | 'operational' | 'error';
 
       // Update the class after status is changed
       const element = document.getElementById('input');
       if (this.currentStatus === 'operational') {
+        this.dynamicHostService.setNewHost(inputValue);
         element?.classList.add('green');
       }
     });

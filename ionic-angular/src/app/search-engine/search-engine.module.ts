@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ResultsListComponent } from './components/results-list/results-list.component';
+import { DynamicSearchEngineComponent } from './components/dynamic-search-engine/dynamic-search-engine.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ResultsListComponent } from './components/results-list/results-list.com
     ResultsListComponent,
     PlaygroundPageComponent,
     SearchEngineRoutingComponent,
+    DynamicSearchEngineComponent,
   ],
   imports: [
     IonicModule,

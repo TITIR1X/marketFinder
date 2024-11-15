@@ -7,6 +7,7 @@ import { catchError, map, Observable, of, startWith, switchMap } from "rxjs";
 })
 export class DynamicHostService {
 
+    dynamicHost: string = ''
     showComponent: boolean = false;
 
     showContainerComponent() {
@@ -17,38 +18,54 @@ export class DynamicHostService {
         this.showComponent = false;
     }
 
-    dynamicHost: string = 'https://example.ngrok-free.app/'
 
     constructor(private http: HttpClient) { }
 
     setNewHost(host: string) {
-        if (host.endsWith('/')) {
-            this.dynamicHost = host.slice(0, -1);
-        } else {
-            this.dynamicHost = host;
-        }
+        let cleanedHost = host.split('/').slice(0, 3).join('/');
+        this.dynamicHost = cleanedHost;
         localStorage.setItem('apiHost', this.dynamicHost);
     }
 
-    getHost() {
-        return localStorage.getItem('apiHost')
+
+    getHost(): Observable<string> {
+        const host = localStorage.getItem('apiHost') || '';  // Default to empty string if no host is found
+        return this.checkDynamicHost(host).pipe(
+            switchMap(status => {
+                if (status !== 'operational') {
+                    this.showContainerComponent();  // If not operational, show the component
+                }
+                return of(status);  // Return the status so it can be used elsewhere if needed
+            })
+        );
     }
 
+    
     checkDynamicHost(host: string): Observable<string> {
-        const baseUrl = `${host}`;
+        let baseUrl = `${host}`;
+        let cleanedHost = baseUrl.split('/').slice(0, 3).join('/');
+
         if (host.length === 0) {
             return of('waiting');
         }
+
         return of('connecting').pipe(   // Emitir 'connecting' primero
             startWith('connecting'),    // Estado inicial: "conectando"
-            switchMap(() => this.http.get(baseUrl, { responseType: 'text' }).pipe(
-                map(() => 'operational'),   // Si hay respuesta, retorna "operational"
+            switchMap(() => this.http.get<{ status: number, codeToMatch: string }>(`${cleanedHost}/response`, { responseType: 'json' }).pipe(
+                map((response) => {
+                    // Verificar si el status es 200 y codeToMatch es "018352"
+                    if (response.status === 200 && response.codeToMatch === "018352") {
+                        return 'operational';
+                    }
+                    return 'error'; // En cualquier otro caso, retornar "error"
+                }),
                 catchError((error: HttpErrorResponse) => {
-                    return of('error');     // Retorna "error" en caso de error
+                    return of('error'); // Retorna "error" en caso de error
                 })
             ))
         );
     }
+
 
 
 }

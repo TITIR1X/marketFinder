@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DynamicHostService } from '../../../shared/services/dynamic-host.service';
+import { DynamicSearchEngineService } from '../../services/dynamic-search-engine.service';
 
 @Component({
   selector: 'app-playground',
@@ -9,5 +10,6 @@ import { DynamicHostService } from '../../../shared/services/dynamic-host.servic
 export class PlaygroundPageComponent {
   constructor(
     public dynamicHostService: DynamicHostService,
+    public dynamicSearchEngineService: DynamicSearchEngineService
   ) { }
 }

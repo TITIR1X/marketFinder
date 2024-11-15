@@ -76,3 +76,34 @@ button.send-request svg {
     width: var(--square-px);
     height: var(--square-px);
 }
+
+
+
+button.change-model {
+    gap: 8px;
+    right: calc(34px + 5px);
+    width: 144px;
+    height: 34px;
+    display: flex;
+    position: absolute;
+    min-width: var(--square-px);
+    transform: translateY(calc(-34px - 5px));
+    min-height: var(--square-px);
+    align-items: center;
+    border-radius: 13px;
+    padding-left: 13px;
+    justify-content: left;
+    backdrop-filter: blur(13px);
+    background-color: light-dark(rgb(0, 0, 0, .8), rgb(0, 0, 0, .5));
+}
+
+button.change-model span {
+    color: light-dark(#fff, #fff);
+}
+
+button.change-model svg {
+    --square-px: 21px;
+    fill: light-dark(#fff, #fff);
+    width: var(--square-px);
+    height: var(--square-px);
+}
