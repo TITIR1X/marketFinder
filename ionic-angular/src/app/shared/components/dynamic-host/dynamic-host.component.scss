@@ -74,6 +74,11 @@ main .content input.green {
 }
 
 
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .status-container {
     gap: 0 5px;
@@ -110,10 +115,19 @@ svg.connecting {
 span.operational {
     color: green;
 }
+
 svg.operational {
     fill: green;
 }
 
 svg.error {
     fill: red;
+}
+
+
+.self-closing__container {
+    margin-top: -8px;
+}
+.self-closing__container span {
+
 }

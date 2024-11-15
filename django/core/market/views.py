@@ -103,7 +103,7 @@ def get_search_engine_models(request):
             'id': 'MT2',
             'version': '2.0',
             'name': 'Modelo T2',
-            'description': '',
+            'description': 'Búsqueda avanzada de categorías utilizando la librería fuzzywuzzy para coincidencias más precisas',
         },
     ]
     
