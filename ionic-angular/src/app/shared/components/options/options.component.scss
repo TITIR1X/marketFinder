@@ -9,11 +9,17 @@
     position: fixed;
 }
 
+.container {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    max-width: 987px;
+}
+
 menu {
-    top: 55px;
-    right: 0;
     margin: 0;
     z-index: 2;
+    right: 0;
     padding: 0;
     position: absolute;
     box-shadow: 2px 2px 13px light-dark(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0.013));
@@ -21,6 +27,12 @@ menu {
     backdrop-filter: blur(13px);
     background-color: light-dark(rgba(222, 222, 222, 0.55), rgba(51, 51, 51, 0.55));
 }
+
+// @media (max-width: 987px) {
+//     menu {
+//         right: 0;
+//     }
+// }
 
 menu button:first-child {
     border-radius: 3px 3px 0 0;
