@@ -1,7 +1,6 @@
 <main class="receive-sidebar-action">
 
   <div *ngIf="searchInputService.getStoredData() as storedData" class="data-container">
-      <!-- Categorías -->
     <section class="categories">
       <h3>Categorías:</h3>
       <table class="category-table">
@@ -20,7 +19,6 @@
       </table>
     </section>
     
-    <!-- Categorías desde la raíz -->
     <section class="categories-root">
       <h3>Categorías padre:</h3>
       <div *ngFor="let categoryRoot of storedData.categories_from_root" class="category-root">
@@ -32,7 +30,6 @@
     </section>
   </div>
 
-  <!-- Mensaje cuando no hay datos -->
   <div *ngIf="!searchInputService.getStoredData()" class="no-data">
     <p>No hay datos disponibles. Realiza una búsqueda para ver los resultados.</p>
   </div>

@@ -1,23 +1,21 @@
 header {
+    width: 100;
+    margin: auto;
     padding: 13px 13px;
     display: flex;
+    max-width: 987px;
     align-items: center;
     justify-content: space-between;
-    margin: auto;
-    max-width: 987px;
-    width: 100;
 }
 
-
-
-
 header button.single-icon {
+    transition: background-color .13s;
     background-color: transparent;
 }
 
 header button.single-icon svg {
     --square-px: 34px;
-    color: #000;
+    color: light-dark(#000, #fff);
     width: var(--square-px);
     height: var(--square-px);
     border-radius: 50%;
@@ -25,7 +23,7 @@ header button.single-icon svg {
 
 header button.single-icon:hover svg,
 header button.single-icon:active svg {
-    background-color: rgb(0, 0, 0, .02);
+    background-color: light-dark(rgb(0, 0, 0, .02), rgb(255, 255, 255, .02));
 }
 
 button.sidebar {
@@ -47,35 +45,33 @@ button.publish-your-service {
     display: flex;
     align-items: center;
     border-radius: 8px;
-    background-color: rgb(0, 0, 0, .08);
+    background-color: light-dark(rgb(0, 0, 0, .08), rgb(255, 255, 255, .08));
 }
 
 // button.publish-your-service span {}
 
 button.publish-your-service svg {
     --square-px: 21px;
-    color: #000;
+    color: light-dark(#000, #fff);
     width: var(--square-px);
     height: var(--square-px);
 }
-
-
-
 
 button.options {
     z-index: 2;
     margin-top: 1px;
     border-radius: 50%;
-    transition: background-color .13s;
 }
 
 button.options:hover,
 button.options:active {
-    background-color: rgb(0, 0, 0, .03) !important;
+    background-color: light-dark(rgb(0, 0, 0, .03), rgb(255, 255, 255, .03)) !important;
 }
 
 button.options.active {
-    background-color: rgb(0, 0, 0, .021) !important;
+    background-color: light-dark(rgb(0, 0, 0, .021), rgb(255, 255, 255, .021)) !important;
 }
 
-// button.options svg {}
+button.options svg {
+    fill: light-dark(#000, #fff);
+}

@@ -8,8 +8,9 @@ menu {
     padding: 0;
     position: fixed;
     animation: slideIn 0.2s forwards;
-    box-shadow: 2px 2px 13px rgb(0, 0, 0, .13);
-    background-color: #fff;
+    box-shadow: 2px 2px 13px light-dark(rgb(0, 0, 0, .13), rgb(255, 255, 255, .013));
+    background-color: light-dark(rgba(222, 222, 222, 0.55), rgb(51, 51, 51, .55));
+    backdrop-filter: blur(13px);
 }
 
 @keyframes slideIn {
@@ -50,30 +51,60 @@ menu header h1 {
 }
 
 menu header button {
+    transition: background-color .13s;
+    border-radius: 50%;
     background-color: transparent;
 }
 
 menu header button svg {
     --square-px: 34px;
+    fill: light-dark(#000, #fff);
     width: var(--square-px);
     height: var(--square-px);
 }
 
+menu header button:hover,
+menu header button:active {
+    background-color: light-dark(rgb(0, 0, 0, .02), rgb(255, 255, 255, .02));
+}
+
 main .date {
-    color: rgb(0, 0, 0, .8);
-    margin: 13px 0 13px 13px;
+    color: light-dark(rgb(0, 0, 0, .8), rgb(255, 255, 255, .8));
+    margin: 13px 0 5px 13px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 200;
 }
 
 main button {
     width: 100%;
-    padding: 13px 0 13px 13px;
+    display: flex;
+    padding: 13px 34px 13px 13px;
+    align-items: center;
+    justify-content: space-between;
     background-color: transparent;
+    transition: background-color .08s;
+}
+
+main button h4 {
+    fill: light-dark(#000, #fff);
+}
+
+main button span {
+    color: light-dark(#000, rgb(255, 255, 255, .34));
+    font-weight: 400;
+}
+
+main button svg {
+    fill: light-dark(#000, rgb(0, 128, 0, 1));
+}
+
+main button:active,
+main button:hover {
+    background-color: light-dark(rgb(0, 0, 0, .05), rgb(255, 255, 255, .05));
 }
 
 main .title {
-    color: rgb(0, 0, 0, 1);
+    color: light-dark(#000, #fff);
     margin: 0;
     font-size: 16px;
     text-align: left;
@@ -82,11 +113,16 @@ main .title {
 
 
 @media (min-width: 610px) {
+    ::ng-deep .receive-sidebar-action {
+        animation: none !important;
+    }
+
     menu {
         width: 610px;
     }
 
-    ::ng-deep .receive-sidebar-action {
-        animation: none !important;
+    menu header,
+    menu main {
+        padding-left: 55px;
     }
 }

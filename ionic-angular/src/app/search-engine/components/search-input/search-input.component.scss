@@ -4,11 +4,22 @@ main {
 }
 
 main h1 {
+    color: light-dark(#000, #fff);
     margin: 55px 0;
     font-size: 34px;
     text-align: center;
     font-weight: 500;
     user-select: none;
+}
+
+main h1:nth-child(1) {
+    scale: .89;
+    opacity: .21;
+    margin-bottom: 0;
+}
+
+main h1:nth-child(2) {
+    margin-top: 0;
 }
 
 .textarea__container {
@@ -17,6 +28,7 @@ main h1 {
     position: relative;
     border-radius: 13px;
     padding-bottom: 34px;
+    background-color: light-dark(#fff, #222);
 }
 
 .textarea__container label {
@@ -26,6 +38,7 @@ main h1 {
 }
 
 textarea {
+    color: light-dark(#000, #fff);
     width: 100%;
     border: none;
     resize: none;
@@ -33,6 +46,11 @@ textarea {
     padding: 13px;
     font-size: 16px;
     border-radius: 13px;
+    background-color: light-dark(#fff, #222);
+}
+
+textarea::placeholder {
+    color: light-dark(rgb(0, 0, 0, .55), rgb(255, 255, 255, .55));
 }
 
 button.send-request {
@@ -48,12 +66,13 @@ button.send-request {
     align-items: center;
     border-radius: 13px;
     justify-content: center;
-    background-color: #000;
+    backdrop-filter: blur(13px);
+    background-color: light-dark(rgb(0, 0, 0, .8), rgb(0, 0, 0, .5));
 }
 
 button.send-request svg {
     --square-px: 21px;
-    fill: #fff;
+    fill: light-dark(#fff, #fff);
     width: var(--square-px);
     height: var(--square-px);
 }
