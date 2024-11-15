@@ -1,4 +1,5 @@
 django/env
 django/core/.env
+ionic-angular/www
 ionic-angular/.angular
 ionic-angular/node_modules
