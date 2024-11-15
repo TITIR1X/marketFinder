@@ -29,3 +29,22 @@ def category_search(request):
     response = build_response(grouped_results)
 
     return JsonResponse(response)
+
+
+def get_search_engine_models(request):
+    models = [
+        {
+            'version': '1.0',
+            'name': 'model T1',
+            'description': '',
+            'date': str(date.today())
+        },
+        {
+            'version': '1.0',
+            'name': 'model T2',
+            'description': ''
+            'date': str(date.today())
+        },
+    ]
+    
+    return JsonResponse(models, safe=False)
