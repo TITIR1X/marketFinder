@@ -1,4 +1,5 @@
 import json
+from datetime import date
 from .models import Category
 from django.db.models import Q
 from django.views import View
@@ -36,15 +37,18 @@ def get_search_engine_models(request):
         {
             'version': '1.0',
             'name': 'model T1',
-            'description': '',
             'date': str(date.today())
         },
         {
-            'version': '1.0',
+            'version': '2.0',
             'name': 'model T2',
-            'description': ''
             'date': str(date.today())
         },
+        {
+            'version': '3.0',
+            'name': 'model T3',
+            'date': str(date.today())
+        }
     ]
     
     return JsonResponse(models, safe=False)
