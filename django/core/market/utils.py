@@ -1,13 +1,6 @@
 from .models import Category
 from django.http import JsonResponse
 
-def get_search_query(request):
-    """Obtiene y limpia la consulta de búsqueda del request."""
-    return request.GET.get('query', '').strip()
-
-def fetch_categories():
-    """Obtiene todas las categorías de la base de datos."""
-    return Category.objects.all()
 
 def match_category(query, category):
     """Compara la consulta con el nombre de la categoría y devuelve un valor de coincidencia basado en la longitud de la coincidencia."""
@@ -70,12 +63,12 @@ def build_response(grouped_results):
     return response
 
 def category_search(request):
-    query = get_search_query(request)
+    query = request.GET.get('query', '').strip()
     
     if not query:
         return JsonResponse({'results': []})
 
-    categories = fetch_categories()
+    categories = Category.objects.all()
     results = []
 
     # Busca coincidencias utilizando una comparación simple

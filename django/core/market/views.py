@@ -3,17 +3,17 @@ from .models import Category
 from django.db.models import Q
 from django.views import View
 from django.http import JsonResponse
-from market.utils import fetch_categories, get_search_query, match_category, create_category_result, group_results_by_path, build_response
+from market.utils import match_category, create_category_result, group_results_by_path, build_response
 
 
 def category_search(request):
     """Vista que maneja la búsqueda de categorías según la consulta dada."""
-    query = get_search_query(request)
+    query = request.GET.get('query', '').strip()
     
     if not query:
         return JsonResponse({'results': []})
 
-    categories = fetch_categories()
+    categories = Category.objects.all()
     results = []
 
     # Busca coincidencias utilizando una comparación simple
