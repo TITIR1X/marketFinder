@@ -1,5 +1,5 @@
 from django.urls import path
-from market.views import category_search, get_search_engine_models
+from market.views import search_engine_mt1, search_engine_mt2, get_search_engine_models
 from market.data_collection.views import load_categories_from_json, CleanDuplicateCategories
 
 urlpatterns = [
